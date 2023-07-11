@@ -9,7 +9,10 @@ const DashboardPage = async () => {
     "https://jsonplaceholder.typicode.com/posts/1",
   );
 
-  return <div>{JSON.stringify(data)}</div>;
+  throw new Error("not authenticated")
+
+  // return <div>{JSON.stringify(data)}</div>;
+
 };
 
 export default DashboardPage;
