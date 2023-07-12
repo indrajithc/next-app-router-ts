@@ -1,9 +1,11 @@
 import { AuthRequiredError } from "./lib/exceptions";
 
-const session = null;
+let session = null;
 
 
 export default function Home() {
+
+  session = Math.random() > 0.5 
 
   if(!session ) throw new AuthRequiredError("");
 
