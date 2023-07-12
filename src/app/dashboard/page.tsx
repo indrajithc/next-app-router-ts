@@ -1,7 +1,9 @@
 import { FC } from "react";
 import axios from "axios";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
+
+export const revalidate = 10;
 
 interface DashboardPageProps {}
 
@@ -13,8 +15,9 @@ const PageProps = async (props: DashboardPageProps) => {
   // });
   // const data = await res.json();
 
-  const { data} = await axios.get("https://jsonplaceholder.typicode.com/posts/1")
-
+  const { data } = await axios.get(
+    "https://jsonplaceholder.typicode.com/posts/1",
+  );
 
   console.log({ data });
 
