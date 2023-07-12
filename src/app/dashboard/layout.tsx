@@ -1,3 +1,9 @@
+
+export const metadata = {
+  title: "Dashboard",
+  description: "My dashboard description"
+}
+
 export default function DashboardLayout({
   children,
 }: {
