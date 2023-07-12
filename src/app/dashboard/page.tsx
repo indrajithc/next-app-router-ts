@@ -1,6 +1,8 @@
 import { FC } from "react";
 import axios from "axios";
 
+export const dynamic = "force-dynamic";
+
 interface DashboardPageProps {}
 
 const PageProps = async (props: DashboardPageProps) => {
