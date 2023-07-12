@@ -13,17 +13,19 @@ type Post = {
   body: string;
 };
 
-
-export async function generateMetadata ({ params}: PostPageProps) : Promise<MetaData> {
-
-  const res = await fetch( `https://jsonplaceholder.typicode.com/posts/${params.postId}`);
-  const data = await res.json() as Post;
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<MetaData> {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${params.postId}`,
+  );
+  const data = (await res.json()) as Post;
   return {
-    title: data.title
-  }
+    title: data.title,
+  };
 }
 
-const PageProps  = async(props: PostPageProps) => {
+const PageProps = async (props: PostPageProps) => {
   const { params } = props;
   return <div>{params.postId}</div>;
 };
