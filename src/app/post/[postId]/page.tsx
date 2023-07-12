@@ -1,5 +1,16 @@
 import { FC } from "react";
 
+export async function generateStaticParams() {
+  const posts= ["post-one", "post-two"];
+  
+  return posts.map((post) => {
+
+    return ({
+      postId: post
+    })
+  })
+}
+
 interface PostPageProps {
   params: {
     postId: string;
