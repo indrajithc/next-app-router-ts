@@ -15,6 +15,8 @@ const PageProps = async (props: DashboardPageProps) => {
   // });
   // const data = await res.json();
 
+  let time = new Date();
+
   const { data } = await axios.get(
     "https://jsonplaceholder.typicode.com/posts/1",
   );
@@ -24,6 +26,9 @@ const PageProps = async (props: DashboardPageProps) => {
   return (
     <div>
       <div>Dashboard</div>
+      <div style={{ padding: "1rem"}}>
+        { time.toLocaleTimeString()}
+      </div>
       <div>{JSON.stringify(data)}</div>
     </div>
   );
