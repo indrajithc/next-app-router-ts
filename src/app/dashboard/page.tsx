@@ -1,15 +1,18 @@
 import { FC } from "react";
+import axios from "axios";
 
 interface DashboardPageProps {}
 
 const PageProps = async (props: DashboardPageProps) => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
-   next: {
-    revalidate: 10
-   }
-  });
+  // const res = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+  //  next: {
+  //   revalidate: 10
+  //  }
+  // });
+  // const data = await res.json();
 
-  const data = await res.json();
+  const { data} = await axios.get("https://jsonplaceholder.typicode.com/posts/1")
+
 
   console.log({ data });
 
