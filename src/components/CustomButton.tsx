@@ -8,10 +8,18 @@ interface CustomButtonProps {
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   btnType?: "button" | "submit";
   textStyles?: string;
+  rightIcon?: string;
 }
 
 const CustomButton: FC<CustomButtonProps> = (props) => {
-  const { title, containerStyles, btnType, textStyles, handleClick } = props;
+  const {
+    title,
+    containerStyles,
+    btnType,
+    rightIcon,
+    textStyles,
+    handleClick,
+  } = props;
   return (
     <button
       disabled={false}
@@ -20,6 +28,16 @@ const CustomButton: FC<CustomButtonProps> = (props) => {
       onClick={handleClick}
     >
       <span className={`flex-1 ${textStyles}`}>{title}</span>
+      {rightIcon && (
+        <div className="relative w-6 h-6">
+          <Image
+            src={rightIcon}
+            alt="arrow_left"
+            fill
+            className="object-contain"
+          />
+        </div>
+      )}
     </button>
   );
 };
